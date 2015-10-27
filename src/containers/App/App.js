@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import DocumentMeta from 'react-document-meta';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
+import { isLoaded as arePredictionsLoaded, load as loadPredictions } from 'redux/modules/predictions';
 import { InfoBar } from 'components';
 import { pushState } from 'redux-router';
 import config from '../../config';
@@ -52,6 +53,9 @@ export default class App extends Component {
     }
     if (!isAuthLoaded(getState())) {
       promises.push(dispatch(loadAuth()));
+    }
+    if (!arePredictionsLoaded(getState())) {
+      promises.push(dispatch(loadPredictions()));
     }
     return Promise.all(promises);
   }

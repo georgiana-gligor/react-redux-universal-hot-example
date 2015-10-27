@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import DocumentMeta from 'react-document-meta';
-import { MiniInfoBar } from 'components';
+import { MiniInfoBar, PredictionList } from 'components';
 
 export default class About extends Component {
   state = {
@@ -25,6 +25,8 @@ export default class About extends Component {
             href="https://github.com/erikras/react-redux-universal-hot-example/graphs/contributors"
             target="_blank">all the contributors</a>.
         </p>
+
+        <PredictionList />
 
         <h3>Mini Bar <span style={{color: '#aaa'}}>(not that kind)</span></h3>
 
